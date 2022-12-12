@@ -18,6 +18,10 @@ public class BridgeSize {
         validateRange(size);
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public void validateNumeric(String input) {
         if (input == null || !Pattern.matches(NUMERIC_PATTERN, input)) {
             throw new IllegalArgumentException(ErrorMessage.BRIDGE_SIZE_EXCEPTION);
