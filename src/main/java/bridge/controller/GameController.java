@@ -4,6 +4,7 @@ import bridge.BridgeMaker;
 import bridge.BridgeRandomNumberGenerator;
 import bridge.domain.BridgeGame;
 import bridge.domain.BridgeSize;
+import bridge.domain.Move;
 import bridge.message.GameMessage;
 import bridge.view.InputView;
 import bridge.view.OutputView;
@@ -33,6 +34,15 @@ public class GameController {
         } catch (IllegalArgumentException exception) {
             outputView.printException(exception);
             return getBridgeSize();
+        }
+    }
+
+    public Move getNextMove() {
+        try {
+            return new Move(inputView.readMoving());
+        } catch (IllegalArgumentException exception) {
+            outputView.printException(exception);
+            return getNextMove();
         }
     }
 }
