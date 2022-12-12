@@ -22,9 +22,9 @@ public class OutputViewTest {
 
     private static Stream<Arguments> provideParametersForMap() {
         return Stream.of(
-                Arguments.of(BridgePosition.DOWN, false, "O | O |   | X"),
+                Arguments.of(BridgePosition.DOWN, false, "O | O |   |  "),
                 Arguments.of(BridgePosition.DOWN, true, "O | O |   | O"),
-                Arguments.of(BridgePosition.UP, false, "  |   | O |  "),
+                Arguments.of(BridgePosition.UP, false, "  |   | O | X"),
                 Arguments.of(BridgePosition.UP, true, "  |   | O |  ")
         );
     }

@@ -51,9 +51,12 @@ public class OutputView {
             return CORRECT;
         }
         if (bridgePosition.equals(symbol) && !isCorrect) {
-            return INCORRECT;
+            return UNKNOWN;
         }
-        return UNKNOWN;
+        if (isCorrect) {
+            return UNKNOWN;
+        }
+        return INCORRECT;
     }
 
     /**

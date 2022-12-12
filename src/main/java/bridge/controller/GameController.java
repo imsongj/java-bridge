@@ -33,8 +33,12 @@ public class GameController {
 
     public void run(BridgeGame bridgeGame) {
         do {
+            bridgeGame.retry();
             makeMoves(bridgeGame);
-        } while (!bridgeGame.hasReachedEnd() && getGameCommand().retry());
+            if (bridgeGame.hasReachedEnd()) {
+                break;
+            }
+        } while (getGameCommand().retry());
     }
 
     public void makeMoves(BridgeGame bridgeGame) {
