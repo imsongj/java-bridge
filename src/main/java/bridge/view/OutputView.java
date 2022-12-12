@@ -5,8 +5,8 @@ import static bridge.domain.BridgePosition.DOWN;
 
 import bridge.domain.BridgeMap;
 import bridge.domain.BridgePosition;
-
 import bridge.domain.Result;
+
 import java.util.List;
 import java.util.StringJoiner;
 

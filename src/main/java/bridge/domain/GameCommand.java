@@ -15,7 +15,7 @@ public class GameCommand {
 
     public void validateMove(String input) {
         if (!input.equals(RETRY) && !input.equals(QUIT)) {
-            throw new IllegalArgumentException(ErrorMessage.MOVE_EXCEPTION);
+            throw new IllegalArgumentException(ErrorMessage.GAME_COMMAND_EXCEPTION);
         }
     }
 
