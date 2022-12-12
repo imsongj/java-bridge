@@ -45,7 +45,16 @@ public class BridgeGame {
     public void retry() {
     }
 
-    public BridgeMap getMap() {
-        return new BridgeMap(bridge, moves);
+    public Result getResult() {
+        return new Result(bridge, moves);
+    }
+
+    public boolean canMove() {
+        Result result = new Result(bridge, moves);
+        return !result.hasReachedEnd() && result.isLastMoveCorrect();
+    }
+
+    public boolean hasReachedEnd() {
+        return new Result(bridge, moves).hasReachedEnd();
     }
 }

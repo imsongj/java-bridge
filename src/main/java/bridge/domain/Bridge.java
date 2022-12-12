@@ -10,6 +10,10 @@ public class Bridge {
         this.symbols = bridgeSymbols;
     }
 
+    public int size() {
+        return symbols.size();
+    }
+
     public List<String> getSymbols(int end) {
         return Collections.unmodifiableList(symbols.subList(0, end));
     }
