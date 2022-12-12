@@ -24,6 +24,7 @@ public class GameController {
         outputView.printMessage(GameMessage.START);
         initialize(bridgeGame);
         run(bridgeGame);
+        outputView.printResult(bridgeGame.getBridgeMap(), bridgeGame.getResult());
     }
 
     public void initialize(BridgeGame bridgeGame) {
@@ -44,7 +45,7 @@ public class GameController {
     public void makeMoves(BridgeGame bridgeGame) {
         do {
             bridgeGame.move(getNextMove());
-            outputView.printMap(bridgeGame.getResult());
+            outputView.printMap(bridgeGame.getBridgeMap());
         } while (bridgeGame.canMove());
     }
 

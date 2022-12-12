@@ -47,17 +47,21 @@ public class BridgeGame {
         resetMoves();
     }
 
-    public Result getResult() {
-        return new Result(bridge, moves);
+    public BridgeMap getBridgeMap() {
+        return new BridgeMap(bridge, moves);
     }
 
     public boolean canMove() {
-        Result result = new Result(bridge, moves);
+        BridgeMap result = new BridgeMap(bridge, moves);
         return !result.hasReachedEnd() && result.isLastMoveCorrect();
     }
 
     public boolean hasReachedEnd() {
-        Result result = new Result(bridge, moves);
-        return result.hasReachedEnd() && result.isLastMoveCorrect();
+        BridgeMap bridgeMap = new BridgeMap(bridge, moves);
+        return bridgeMap.hasReachedEnd() && bridgeMap.isLastMoveCorrect();
+    }
+
+    public Result getResult() {
+        return new Result(new BridgeMap(bridge, moves).isLastMoveCorrect(), attempts);
     }
 }
