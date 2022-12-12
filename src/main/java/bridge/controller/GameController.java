@@ -22,6 +22,8 @@ public class GameController {
         BridgeGame bridgeGame = new BridgeGame();
         outputView.printMessage(GameMessage.START);
         initialize(bridgeGame);
+        bridgeGame.move(getNextMove());
+        outputView.printMap(bridgeGame.getMap());
     }
 
     public void initialize(BridgeGame bridgeGame) {

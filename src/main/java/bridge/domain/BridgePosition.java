@@ -12,6 +12,10 @@ public enum BridgePosition {
         this.symbol = symbol;
     }
 
+    public boolean equals(String symbol) {
+        return this.symbol.equals(symbol);
+    }
+
     public static String getSymbolOf(int number) {
         for (BridgePosition bridgePosition : BridgePosition.values()) {
             if (bridgePosition.number == number) {

@@ -44,4 +44,8 @@ public class BridgeGame {
      */
     public void retry() {
     }
+
+    public BridgeMap getMap() {
+        return new BridgeMap(bridge, moves);
+    }
 }

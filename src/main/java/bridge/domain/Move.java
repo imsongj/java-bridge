@@ -18,4 +18,8 @@ public class Move {
             throw new IllegalArgumentException(ErrorMessage.MOVE_EXCEPTION);
         }
     }
+
+    public boolean equals(String symbol) {
+        return this.symbol.equals(symbol);
+    }
 }
