@@ -1,5 +1,7 @@
 package bridge.domain;
 
+import java.util.Arrays;
+
 public enum BridgePosition {
     UP(1, "U"),
     DOWN(0, "D");
@@ -17,11 +19,18 @@ public enum BridgePosition {
     }
 
     public static String getSymbolOf(int number) {
-        for (BridgePosition bridgePosition : BridgePosition.values()) {
-            if (bridgePosition.number == number) {
-                return bridgePosition.symbol;
-            }
-        }
-        throw new IllegalArgumentException();
+        return Arrays.stream(BridgePosition.values())
+                .filter(bridgePosition -> bridgePosition.equals(number))
+                .findFirst()
+                .map(BridgePosition::getSymbol)
+                .orElseThrow(IllegalArgumentException::new);
+    }
+
+    public boolean equals(int number) {
+        return this.number == number;
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 }
